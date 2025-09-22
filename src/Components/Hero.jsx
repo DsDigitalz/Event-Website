@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0F0B0C] to-[#1d0600] py-20 text-white h-screen">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0F0B0C] to-[#1d0600] py-20  text-white">
       <div className="max-w-[1440px] container mx-auto flex flex-col items-center justify-between gap-12 px-4 md:flex-row lg:px-10">
         {/* Left Content Section */}
         <div className="max-w-xl text-center md:text-left">
@@ -24,13 +24,13 @@ export default function Hero() {
               See Schedule
             </button>
           </div>
-          <div className="mt-20">
+          <div className="mt-20 hidden md:block">
             <img src="herovector1.png" alt="" />
           </div>
         </div>
 
         {/* Right Image Collage Section */}
-        <div>
+        <div className="hidden md:block">
           <img src="herovector2.png" alt="" />
         </div>
         <div>
