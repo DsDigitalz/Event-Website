@@ -2,19 +2,24 @@ import React from "react";
 
 function SpeakersSection() {
   return (
-    <section className=" bg-[#171717] text-white py-10  px-4 ">
+    <section className="relative bg-[#171717] text-white py-10 lg:pb-20  px-4 ">
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-12 justify-between lg:px-10 ">
         {/* Left Side: Image and Speaker Details */}
+        <img
+          src="herovector1.png"
+          alt=""
+          className="hidden lg:block absolute bottom-4 left-20"
+        />
         <div className="">
           <img src="speakerimg.png" alt="Main speaker" />
         </div>
 
         {/* Right Side: Content */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
-          <h2 className="text-2xl md:text-4xl lg: font-bold leading-tight mb-6">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center text-center lg:text-left">
+          <h2 className="text-center text-2xl md:text-4xl lg: font-bold leading-tight mb-6">
             The event boasts our top creative influencers
           </h2>
-          <p className="text-base text-gray-300 mb-10">
+          <p className="text-center text-gray-300 mb-10">
             The event features renowned influencers and innovators shaping
             trends and driving creativity across various industries.
           </p>
@@ -40,8 +45,17 @@ function SpeakersSection() {
         </div>
 
         {/* Right Side Image */}
+        <img
+          src="speakericon1.png"
+          alt=""
+          className="hidden lg:block absolute right-20 top-10"
+        />
         <div className="">
-          <img src="speakerimg2.png" alt="Audience member" className="lg:mt-20" />
+          <img
+            src="speakerimg2.png"
+            alt="Audience member"
+            className="lg:mt-20"
+          />
         </div>
       </div>
     </section>
