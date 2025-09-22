@@ -9,7 +9,7 @@ export default function Hero() {
           <p className="mb-2 text-sm font-semibold text-gray-400">
             15-17 December National IT Hall
           </p>
-          <h2 className="mb-6 text-4xl font-extrabold leading-tight md:text-5xl">
+          <h2 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl ">
             Tech Innovation Event 2025
           </h2>
           <p className="mb-8 text-base text-gray-300">

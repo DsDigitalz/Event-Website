@@ -20,12 +20,12 @@ function EventCards() {
   ];
 
   return (
-    <div className=" bg-white py-3 px-4 sm:px-6 lg:px-8">
+    <div className=" bg-white pt-3 pb-15 lg:pb-20 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-[1440px] lg:px-10 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {events.map((event, index) => (
           <div
             key={index}
-            className="relative rounded-2xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105"
+            className="relative rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105"
           >
             <img
               src={event.image}
