@@ -2,8 +2,8 @@ import React from "react";
 
 function LogoSlide() {
   return (
-    <section className=" bg-[#E7E2C9] py-7 ">
-      <div className="max-w-[1440px] mx-auto text-lg gap-20 lg:text-2xl grid justify-items-center grid-cols-3  sm:grid-cols-5 text-[#3F3C3D] ">
+    <section className=" bg-[#E7E2C9] py-5 md:py-7 ">
+      <div className="max-w-[1440px] px-4 text-lg overflow-x-hidden gap-5  lg:text-2xl mx-auto flex justify-between text-[#3F3C3D] ">
         <div className="flex items-center ">
           <span role="img" aria-label="sparks">
             ✨
