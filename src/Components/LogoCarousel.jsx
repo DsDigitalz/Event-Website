@@ -1,6 +1,6 @@
 import React from "react";
 
-function LogoSlide() {
+export default function LogoCarousel() {
   return (
     <section className=" bg-[#E7E2C9] py-5 md:py-7 ">
       <div className="max-w-[1440px] px-4 lg:px-10 text-lg overflow-x-hidden gap-5  lg:text-2xl mx-auto flex justify-between text-[#3F3C3D] ">
@@ -38,5 +38,3 @@ function LogoSlide() {
     </section>
   );
 }
-
-export default LogoSlide;
