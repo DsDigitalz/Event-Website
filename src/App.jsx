@@ -5,6 +5,7 @@ import Hero from "./Components/Hero";
 import AboutSection from "./Components/AboutSection";
 import EventCards from "./Components/EventCards";
 import LogoCarousel from "./Components/LogoCarousel";
+import SpeakersSection from "./Components/SpeakersSection";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <LogoCarousel />
       <AboutSection />
       <EventCards />
+      <SpeakersSection />
     </div>
   );
 }
