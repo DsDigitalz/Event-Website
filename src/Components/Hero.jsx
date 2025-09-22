@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0F0B0C] to-[#1d0600] py-20  text-white">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0F0B0C] to-[#1d0600] py-20  text-white h-screen">
       <div className="max-w-[1440px] container mx-auto flex flex-col items-center justify-between gap-12 px-4 md:flex-row lg:px-10">
         {/* Left Content Section */}
         <div className="max-w-xl text-center md:text-left">
