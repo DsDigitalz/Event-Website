@@ -24,9 +24,15 @@ export default function Hero() {
               See Schedule
             </button>
           </div>
+          <div className="mt-20">
+            <img src="herovector1.png" alt="" />
+          </div>
         </div>
 
         {/* Right Image Collage Section */}
+        <div>
+          <img src="herovector2.png" alt="" />
+        </div>
         <div>
           <img src="heroimg.png" alt="" />
         </div>
