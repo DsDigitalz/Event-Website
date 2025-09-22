@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        // Adjust the scroll threshold as needed
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-[#0F0B0C] p-4 text-white">
+    <nav
+      className={`fixed top-0 w-full p-4 text-white z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#a71c3fbd] backdrop-blur-md bg-opacity-80"
+          : "bg-[#0F0B0C] bg-opacity-100"
+      }`}
+    >
       <div className="max-w-[1440px] container mx-auto flex items-center justify-between lg:px-10">
         <div>
           <h1 className="text-3xl font-bold">Monks Event</h1>

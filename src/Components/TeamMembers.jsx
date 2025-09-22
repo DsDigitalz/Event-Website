@@ -5,7 +5,7 @@ function TeamMembers() {
   const members = [
     {
       image:
-        "https://images.unsplash.com/photo-1507003211169-e695c6edf851?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team1.png",
       name: "Make Torello",
       role: "UX DESIGNER",
       social: {
@@ -16,7 +16,7 @@ function TeamMembers() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1542909168-82c72e890c5f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team2.png",
       name: "Templeton Peck",
       role: "DEVELOPER",
       social: {
@@ -27,7 +27,7 @@ function TeamMembers() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1522264426034-4e945c553303?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team3.png",
       name: "Michael Knight",
       role: "MARKETER",
       social: {
@@ -38,7 +38,7 @@ function TeamMembers() {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1534531688628-9842c556b6be?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team4.png",
       name: "Angela Bower",
       role: "ENTREPRENEUR",
       social: {
@@ -50,8 +50,8 @@ function TeamMembers() {
   ];
 
   return (
-    <div className="bg-[#E7E2C9] py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="bg-[#E7E2C9] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] lg:px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {members.map((member, index) => (
           <div
             key={index}
@@ -98,7 +98,7 @@ function TeamMembers() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

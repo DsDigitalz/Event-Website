@@ -7,6 +7,7 @@ import EventCards from "./Components/EventCards";
 import LogoCarousel from "./Components/LogoCarousel";
 import SpeakersSection from "./Components/SpeakersSection";
 import SpeakersHeading from "./Components/SpeakersHeading";
+import TeamMembers from "./Components/TeamMembers";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <EventCards />
       <SpeakersSection />
       <SpeakersHeading />
+      <TeamMembers />
     </div>
   );
 }
