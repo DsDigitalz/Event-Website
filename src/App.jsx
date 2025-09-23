@@ -11,6 +11,7 @@ import TeamMembers from "./Components/TeamMembers";
 import ScheduleComponent from "./Components/ScheduleComponent";
 import TeamComponents from "./Components/TeamComponents";
 import MoreInfo from "./Components/MoreInfo";
+import EventCardInfo from "./Components/EventCardInfo";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
       <ScheduleComponent />
       <TeamComponents />
       <MoreInfo />
+      <EventCardInfo />
     </div>
   );
 }

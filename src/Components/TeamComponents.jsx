@@ -123,7 +123,7 @@ function TeamComponents() {
 
         {/* Footer Button */}
         <div className="p-7 flex justify-center border-t border-gray-200">
-          <button className="bg-[#7A38FC] text-white font-semibold py-3 px-8 rounded-lg shadow-lg cursor-pointer hover:bg-[#6725e9] transition-colors">
+          <button className="bg-[#7A38FC] text-white font-semibold py-3 px-8 rounded-lg shadow-lg cursor-pointer hover:bg-purple-600 transition-colors">
             See All Schedule
           </button>
         </div>
