@@ -2,11 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className=" bg-gradient-to-l from-[#0F0B0C] to-[#1d0600] text-gray-300 py-16 px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-gradient-to-l from-[#0F0B0C] to-[#1d0600] text-gray-300 py-10 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1440px] lg:px-10 mx-auto">
         {/* Newsletter Section */}
-        <div className="relative text-center py-16 px-4 mb-16 ">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+        <div className="relative text-center lg:py-16 px-4 mb-16 ">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Never miss a single news
           </h2>
           <p className="max-w-2xl mx-auto text-gray-400 mb-8">
@@ -20,37 +20,13 @@ function Footer() {
               placeholder="Enter your email address"
               className="w-full bg-white sm:w-80 px-5 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
-            <button className="w-full sm:w-auto px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition-colors">
+            <button className="w-full sm:w-auto px-8 py-3 bg-purple-700 text-white font-semibold rounded-lg shadow-md hover:bg-purple-600 transition-colors">
               Subscribe
             </button>
           </div>
           {/* Decorative SVG elements (optional) */}
-          <svg
-            className="absolute top-8 left-8 w-16 h-16 text-purple-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-          </svg>
-          <svg
-            className="absolute top-8 right-8 w-16 h-16 text-yellow-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
+          <img src="herovector1.png" alt="" className="absolute hidden lg:block" />
+          <img src="speakericon1.png" alt="" className="absolute right-0 top-10 hidden lg:block" />
         </div>
 
         {/* Footer Navigation and Social Icons */}
