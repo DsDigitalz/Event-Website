@@ -1,54 +1,113 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-function TeamComponents() {
-  const scheduleData = [
-    {
-      title: "The Future of Digital Innovation",
-      speaker: "Make Toretio",
-      time: "10:00 AM - 11:00 AM",
-      description:
-        "The Future of Digital Innovation. Harnessing emerging technologies to revolutionize industries, enhance user experiences, and drive unprecedented growth in a rapidly evolving digital landscape.",
-      image:
-        "team1.png",
-      color: "bg-yellow-50",
-    },
-    {
-      title: "Trends AI and Machine Learning",
-      speaker: "David Brown",
-      time: "11:15 AM - 12:30 PM",
-      description:
-        "AI and Machine Learning are revolutionizing industries by enabling advanced data analysis, personalized experiences, and intelligent automation, paving the way for smarter and more efficient solutions across various sectors.",
-      image:
-        "team2.png",
-      color: "bg-purple-50",
-    },
-    {
-      title: "Digital Marketing for a New Era",
-      speaker: "Jenifer Moore",
-      time: "2:00 PM - 3:00 PM",
-      description:
-        "Navigate the evolving landscape of digital marketing in a new era, harnessing innovative strategies and technologies to create compelling campaigns that resonate with audiences and drive business growth.",
-      image:
-        "team3.png",
-      color: "bg-blue-50",
-    },
-    {
-      title: "Introduction to Blockchain",
-      speaker: "Emily Davis",
-      time: "3:00 PM - 4:00 PM",
-      description:
-        "Blockchain introduction. Decentralized ledger tech records secure, transparent, immutable transactions across networks, transforming finance and supply chain management.",
-      image:
-        "team4.png",
-      color: "bg-red-50",
-    },
-  ];
+const scheduleData = [
+  {
+    title: "The Future of Digital Innovation",
+    speaker: "Make Toretio",
+    time: "10:00 AM - 11:00 AM",
+    description:
+      "The Future of Digital Innovation. Harnessing emerging technologies to revolutionize industries, enhance user experiences, and drive unprecedented growth in a rapidly evolving digital landscape.",
+    image: "team1.png",
+    color: "bg-yellow-50",
+  },
+  {
+    title: "Trends AI and Machine Learning",
+    speaker: "David Brown",
+    time: "11:15 AM - 12:30 PM",
+    description:
+      "AI and Machine Learning are revolutionizing industries by enabling advanced data analysis, personalized experiences, and intelligent automation, paving the way for smarter and more efficient solutions across various sectors.",
+    image: "team2.png",
+    color: "bg-purple-50",
+  },
+  {
+    title: "Digital Marketing for a New Era",
+    speaker: "Jenifer Moore",
+    time: "2:00 PM - 3:00 PM",
+    description:
+      "Navigate the evolving landscape of digital marketing in a new era, harnessing innovative strategies and technologies to create compelling campaigns that resonate with audiences and drive business growth.",
+    image: "team3.png",
+    color: "bg-blue-50",
+  },
+  {
+    title: "Introduction to Blockchain",
+    speaker: "Emily Davis",
+    time: "3:00 PM - 4:00 PM",
+    description:
+      "Blockchain introduction. Decentralized ledger tech records secure, transparent, immutable transactions across networks, transforming finance and supply chain management.",
+    image: "team4.png",
+    color: "bg-red-50",
+  },
+];
 
+// Variants for the overall container
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      when: "beforeChildren", // Animate the container before its children
+    },
+  },
+};
+
+// Variants for the individual schedule items
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Variants for the header
+const headerVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Variants for the button
+const buttonVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+function ScheduleComponent() {
   return (
-    <section className="bg-white pt-5 pb-10  md:pt-10 md:pb-20 l max-w-[1440px] px-4 lg:px-10  mx-auto flex justify-center items-center">
-      <div className="bg-white rounded-lg shadow-xl    w-full border border-gray-200">
+    <section className="bg-white pt-5 pb-10 md:pt-10 md:pb-20 l max-w-[1440px] px-4 lg:px-10 mx-auto flex justify-center items-center">
+      <motion.div
+        className="bg-white rounded-lg shadow-xl w-full border border-gray-200"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {/* Header Section */}
-        <div className="bg-gray-800 text-white p-4 flex justify-between items-center rounded-t-lg">
+        <motion.div
+          className="bg-gray-800 text-white p-4 flex justify-between items-center rounded-t-lg"
+          variants={headerVariants}
+        >
           <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,15 +131,15 @@ function TeamComponents() {
           <span className="font-semibold text-lg hidden sm:block">
             Innovation & Technology
           </span>
-        </div>
+        </motion.div>
 
-          {/* Lunch Break Item */}
         {/* Schedule Items */}
         <div className="p-6 space-y-4">
           {scheduleData.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className={`p-4 rounded-lg flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-4 border-l-4 ${item.color} border-gray-200 transition-shadow hover:shadow-lg`}
+              variants={itemVariants}
             >
               <div className="flex-shrink-0">
                 <img
@@ -103,9 +162,12 @@ function TeamComponents() {
               <div className="flex-shrink-0 text-right md:w-32">
                 <span className="font-medium text-gray-800">{item.time}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
-          <div className="flex justify-center items-center py-6 px-4 text-center">
+          <motion.div
+            className="flex justify-center items-center py-6 px-4 text-center"
+            variants={itemVariants}
+          >
             <div className="border-t border-b border-gray-300 w-full flex flex-col items-center">
               <span className="text-lg font-medium text-gray-800 py-2">
                 Lunch Break & Networking
@@ -114,22 +176,21 @@ function TeamComponents() {
                 12:30 PM - 2:00 PM
               </span>
             </div>
-          </div>
-
-
-          {/* This part of the image is not covered in the data above, so it is hardcoded */}
-          
+          </motion.div>
         </div>
 
         {/* Footer Button */}
-        <div className="p-7 flex justify-center border-t border-gray-200">
+        <motion.div
+          className="p-7 flex justify-center border-t border-gray-200"
+          variants={buttonVariants}
+        >
           <button className="bg-[#7A38FC] text-white font-semibold py-3 px-8 rounded-lg shadow-lg cursor-pointer hover:bg-purple-600 transition-colors">
             See All Schedule
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
 
-export default TeamComponents;
+export default ScheduleComponent;

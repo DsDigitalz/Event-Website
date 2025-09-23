@@ -1,61 +1,91 @@
 import React from "react";
-import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa"; // Assuming you have react-icons installed
+import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const members = [
+  {
+    image: "team1.png",
+    name: "Make Torello",
+    role: "UX DESIGNER",
+    social: {
+      twitter: "#",
+      facebook: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    image: "team2.png",
+    name: "Templeton Peck",
+    role: "DEVELOPER",
+    social: {
+      twitter: "#",
+      facebook: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    image: "team3.png",
+    name: "Michael Knight",
+    role: "MARKETER",
+    social: {
+      twitter: "#",
+      facebook: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    image: "team4.png",
+    name: "Angela Bower",
+    role: "ENTREPRENEUR",
+    social: {
+      twitter: "#",
+      facebook: "#",
+      linkedin: "#",
+    },
+  },
+];
+
+// Variants for the container of all team members
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Stagger the animation of each card
+      delayChildren: 0.1, // Optional: delay the start of the first card's animation
+    },
+  },
+};
+
+// Variants for each individual team member card
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 function TeamMembers() {
-  const members = [
-    {
-      image:
-        "team1.png",
-      name: "Make Torello",
-      role: "UX DESIGNER",
-      social: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-      },
-    },
-    {
-      image:
-        "team2.png",
-      name: "Templeton Peck",
-      role: "DEVELOPER",
-      social: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-      },
-    },
-    {
-      image:
-        "team3.png",
-      name: "Michael Knight",
-      role: "MARKETER",
-      social: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-      },
-    },
-    {
-      image:
-        "team4.png",
-      name: "Angela Bower",
-      role: "ENTREPRENEUR",
-      social: {
-        twitter: "#",
-        facebook: "#",
-        linkedin: "#",
-      },
-    },
-  ];
-
   return (
     <section className="bg-[#FFF5D9] pb-10 md:pt-10 md:pb-15 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1440px] lg:px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+      <motion.div
+        className="max-w-[1440px] lg:px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }} // Trigger when 40% of the container is visible
+      >
         {members.map((member, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:transition-all duration-300"
+            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:transition-all duration-300 group" // Added 'group' class for hover effects
+            variants={cardVariants}
           >
             <div className="relative">
               <img
@@ -63,6 +93,7 @@ function TeamMembers() {
                 alt={member.name}
                 className="w-full h-80 object-cover"
               />
+              {/* Social icons will fade in on hover */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/50 to-transparent p-4 flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <a
                   href={member.social.twitter}
@@ -73,14 +104,14 @@ function TeamMembers() {
                 </a>
                 <a
                   href={member.social.facebook}
-                  className="bg-blue-600 text-white p-2 rounded-full hover:scale-110 transition-transform"
+                  className="bg-purple-600 text-white p-2 rounded-full hover:scale-110 transition-transform"
                   aria-label="Facebook"
                 >
                   <FaFacebookF />
                 </a>
                 <a
                   href={member.social.linkedin}
-                  className="bg-blue-700 text-white p-2 rounded-full hover:scale-110 transition-transform"
+                  className="bg-purple-600 text-white p-2 rounded-full hover:scale-110 transition-transform"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedinIn />
@@ -95,9 +126,9 @@ function TeamMembers() {
                 {member.role}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

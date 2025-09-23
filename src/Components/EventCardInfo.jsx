@@ -1,21 +1,19 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const events = [
   {
-    image:
-      "eventcard4.png",
+    image: "eventcard4.png",
     title: "Friendship Club",
     views: "50K VIEWS",
   },
   {
-    image:
-      "eventcard5.png",
+    image: "eventcard5.png",
     title: "Business Confer...",
     views: "24K VIEWS",
   },
   {
-    image:
-      "eventcard6.png",
+    image: "eventcard6.png",
     title: "Holi Festival",
     views: "26K VIEWS",
   },
@@ -27,14 +25,46 @@ const events = [
   },
 ];
 
+// Variants for the overall grid container
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Stagger the animation of each card
+      delayChildren: 0.1, // Delay the start of the first card's animation
+    },
+  },
+};
+
+// Variants for each individual event card
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 function EventCardInfo() {
   return (
-    <section className="flex flex-wrap justify-center pb-10 px-4 md:pb-20 bg-[#FFF5D9] ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] lg:px-10 ">
+    <section className="flex flex-wrap justify-center pb-10 px-4 md:pb-20 bg-[#FFF5D9]">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] lg:px-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }} // Trigger when 40% of the container is visible
+      >
         {events.map((event, index) => (
-          <div
+          <motion.div
             key={index}
-            className="relative w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+            className="relative w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl" // Removed hover:scale-105 to avoid conflict with Framer Motion
+            variants={cardVariants}
           >
             {/* Image */}
             <img
@@ -51,9 +81,9 @@ function EventCardInfo() {
               </h3>
               <p className="text-sm mt-1">{event.views}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -3,3 +3,17 @@
 :root {
   font-family: Bricolage Grotesque;
 }
+
+/* Carousel.css */
+.carousel-animate {
+  animation: carousel-slide 30s linear infinite;
+}
+
+@keyframes carousel-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
