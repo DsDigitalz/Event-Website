@@ -17,10 +17,10 @@ export default function Hero() {
             networking opportunities for industry pioneers.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
-            <button className="rounded-lg border-2 border-purple-600 hover:bg-purple-600 active:bg-purple-600 text-purple-600 px-8 py-3 font-semibold transition-colors duration-300 hover:text-white">
+            <button className="rounded-lg border-2 border-purple-600 hover:bg-purple-600 active:bg-purple-600 text-purple-600 px-8 py-3 font-semibold transition-colors duration-300 hover:text-white active:text-white">
               Buy Tickets
             </button>
-            <button className="rounded-lg border-2 border-purple-600 px-8 py-3 font-semibold text-purple-600 transition-colors duration-300 hover:bg-purple-600 active:bg-purple-600 hover:text-white">
+            <button className="rounded-lg border-2 border-purple-600 px-8 py-3 font-semibold text-purple-600 transition-colors duration-300 hover:bg-purple-600 active:bg-purple-600 hover:text-white active:text-white">
               See Schedule
             </button>
           </div>
