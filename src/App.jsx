@@ -12,6 +12,7 @@ import ScheduleComponent from "./Components/ScheduleComponent";
 import TeamComponents from "./Components/TeamComponents";
 import MoreInfo from "./Components/MoreInfo";
 import EventCardInfo from "./Components/EventCardInfo";
+import GalleryText from "./Components/galleryText";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
       <TeamComponents />
       <MoreInfo />
       <EventCardInfo />
+      <GalleryText />
     </div>
   );
 }
