@@ -77,7 +77,7 @@ export default function Navbar() {
         </ul>
 
         <a href="#" className="hidden lg:block">
-          <button className="rounded-lg border-2 border-purple-600 px-6 py-2 text-gray-100 transition-colors duration-300 hover:bg-purple-600 hover:text-white">
+          <button className="rounded-lg border-2 border-purple-600 px-6 py-2 text-gray-100 transition-colors duration-300 hover:bg-purple-600 cursor-pointer hover:text-white">
             Get Started
           </button>
         </a>

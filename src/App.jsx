@@ -13,6 +13,7 @@ import TeamComponents from "./Components/TeamComponents";
 import MoreInfo from "./Components/MoreInfo";
 import EventCardInfo from "./Components/EventCardInfo";
 import GalleryText from "./Components/galleryText";
+import PhotoGallery from "./Components/PhotoGallery";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <MoreInfo />
       <EventCardInfo />
       <GalleryText />
+      <PhotoGallery />
     </div>
   );
 }
