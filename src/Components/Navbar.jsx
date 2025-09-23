@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1440px] container mx-auto flex items-center justify-between lg:px-10">
         <div>
-          <h1 className="text-3xl font-bold">Monks Event</h1>
+          <h1 className="text-xl md:text-3xl font-bold">Monks Event</h1>
         </div>
 
         <ul className="hidden space-x-8 lg:flex">
