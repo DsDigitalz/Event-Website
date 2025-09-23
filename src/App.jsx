@@ -8,6 +8,7 @@ import LogoCarousel from "./Components/LogoCarousel";
 import SpeakersSection from "./Components/SpeakersSection";
 import SpeakersHeading from "./Components/SpeakersHeading";
 import TeamMembers from "./Components/TeamMembers";
+import ScheduleComponent from "./Components/ScheduleComponent";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <SpeakersSection />
       <SpeakersHeading />
       <TeamMembers />
+      <ScheduleComponent/>
     </div>
   );
 }
