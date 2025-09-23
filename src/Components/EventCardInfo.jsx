@@ -30,7 +30,7 @@ const events = [
 function EventCardInfo() {
   return (
     <section className="flex flex-wrap justify-center p-8 bg-[#FFF5D9] ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] px-4 lg:px-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] lg:px-10 ">
         {events.map((event, index) => (
           <div
             key={index}
