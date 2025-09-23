@@ -37,7 +37,7 @@ export default function Navbar() {
           <li>
             <a
               href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
             >
               Home
             </a>
@@ -45,7 +45,7 @@ export default function Navbar() {
           <li>
             <a
               href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
             >
               About
             </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
           <li>
             <a
               href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
             >
               Speakers
             </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
           <li>
             <a
               href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
             >
               Gallery
             </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
           <li>
             <a
               href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
             >
               Contact
             </a>

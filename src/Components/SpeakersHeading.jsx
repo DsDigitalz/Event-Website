@@ -2,7 +2,7 @@ import React from "react";
 
 function SpeakersHeading() {
   return (
-    <section className=" bg-[#FFF5D9] py-16">
+    <section className=" bg-[#FFF5D9] py-10 md:py-15">
       <div className="max-w-[1440px] mx-auto lg:px-10  px-4 flex flex-col items-center md:flex-row md:justify-between">
         <div className=" flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4 mb-8 md:mb-0">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#171717] text-center md:text-left">

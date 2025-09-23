@@ -2,7 +2,7 @@ import React from "react";
 
 function ScheduleComponent() {
   return (
-    <section className="relative py-10 bg-white">
+    <section className="relative py-10 md:py-15 bg-white">
       {/* Note: Absolute positioning with fixed values can be problematic for responsiveness. */}
       {/* You may want to use a different approach or adjust these for various screen sizes. */}
       <img src="herovector2.png" alt="" className="hidden md:block absolute md:left-10 lg:left-30 top-32" />
