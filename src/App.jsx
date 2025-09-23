@@ -12,7 +12,8 @@ import ScheduleComponent from "./Components/ScheduleComponent";
 import TeamComponents from "./Components/TeamComponents";
 import MoreInfo from "./Components/MoreInfo";
 import EventCardInfo from "./Components/EventCardInfo";
-import GalleryText from "./Components/galleryText";
+
+import PhotoText from "./Components/PhotoText";
 import PhotoGallery from "./Components/PhotoGallery";
 import CallToAction from "./Components/CallToAction";
 import Footer from "./Components/Footer";
@@ -32,10 +33,10 @@ export default function App() {
       <TeamComponents />
       <MoreInfo />
       <EventCardInfo />
-      <GalleryText />
+      <PhotoText />
       <PhotoGallery />
       <CallToAction />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

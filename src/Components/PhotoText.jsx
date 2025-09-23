@@ -41,7 +41,7 @@ const imageVariants = {
   },
 };
 
-function GalleryText() {
+function PhotoText() {
   return (
     <section className="relative py-10 bg-white overflow-hidden">
       <motion.img
@@ -87,4 +87,6 @@ function GalleryText() {
   );
 }
 
-export default GalleryText;
+export default PhotoText;
+
+
