@@ -54,7 +54,7 @@ function EventCardInfo() {
   return (
     <section className="flex flex-wrap justify-center pb-10 px-4 md:pb-20 bg-[#FFF5D9]">
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] lg:px-10"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] lg:px-10 "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -70,7 +70,7 @@ function EventCardInfo() {
             <img
               src={event.image}
               alt={event.title}
-              className="w-full h-64 object-cover" // Corrected from 'h-120' to 'h-64'
+              className="w-full h-120 object-cover" // Corrected from 'h-120' to 'h-64'
             />
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
