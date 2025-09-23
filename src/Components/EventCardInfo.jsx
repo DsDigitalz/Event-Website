@@ -58,19 +58,19 @@ function EventCardInfo() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }} // Trigger when 40% of the container is visible
+        viewport={{ once: true, amount: 0.4 }}
       >
         {events.map((event, index) => (
           <motion.div
             key={index}
-            className="relative w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl" // Removed hover:scale-105 to avoid conflict with Framer Motion
+            className="relative w-full overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
             variants={cardVariants}
           >
             {/* Image */}
             <img
               src={event.image}
               alt={event.title}
-              className="w-full h-120 object-cover"
+              className="w-full h-64 object-cover" // Corrected from 'h-120' to 'h-64'
             />
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
