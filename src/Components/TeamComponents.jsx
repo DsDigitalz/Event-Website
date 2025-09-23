@@ -9,7 +9,7 @@ function TeamComponents() {
       description:
         "The Future of Digital Innovation. Harnessing emerging technologies to revolutionize industries, enhance user experiences, and drive unprecedented growth in a rapidly evolving digital landscape.",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a2dd7c8fe22?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team1.png",
       color: "bg-yellow-50",
     },
     {
@@ -19,7 +19,7 @@ function TeamComponents() {
       description:
         "AI and Machine Learning are revolutionizing industries by enabling advanced data analysis, personalized experiences, and intelligent automation, paving the way for smarter and more efficient solutions across various sectors.",
       image:
-        "https://images.unsplash.com/photo-1547425260-76bc4907989e?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team2.png",
       color: "bg-purple-50",
     },
     {
@@ -29,7 +29,7 @@ function TeamComponents() {
       description:
         "Navigate the evolving landscape of digital marketing in a new era, harnessing innovative strategies and technologies to create compelling campaigns that resonate with audiences and drive business growth.",
       image:
-        "https://images.unsplash.com/photo-1521119989635-779815049302?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team3.png",
       color: "bg-blue-50",
     },
     {
@@ -39,14 +39,14 @@ function TeamComponents() {
       description:
         "Blockchain introduction. Decentralized ledger tech records secure, transparent, immutable transactions across networks, transforming finance and supply chain management.",
       image:
-        "https://images.unsplash.com/photo-1539571696357-433077c9a00a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "team4.png",
       color: "bg-red-50",
     },
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen py-10 px-4 flex justify-center items-center">
-      <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-4xl w-full border border-gray-200">
+    <section className="bg-white py-5 lg:py-10 max-w-[1440px] px-4 lg:px-10  mx-auto flex justify-center items-center">
+      <div className="bg-white rounded-lg shadow-xl    w-full border border-gray-200">
         {/* Header Section */}
         <div className="bg-gray-800 text-white p-4 flex justify-between items-center rounded-t-lg">
           <div className="flex items-center">
@@ -74,6 +74,7 @@ function TeamComponents() {
           </span>
         </div>
 
+          {/* Lunch Break Item */}
         {/* Schedule Items */}
         <div className="p-6 space-y-4">
           {scheduleData.map((item, index) => (
@@ -104,8 +105,6 @@ function TeamComponents() {
               </div>
             </div>
           ))}
-
-          {/* Lunch Break Item */}
           <div className="flex justify-center items-center py-6 px-4 text-center">
             <div className="border-t border-b border-gray-300 w-full flex flex-col items-center">
               <span className="text-lg font-medium text-gray-800 py-2">
@@ -117,47 +116,19 @@ function TeamComponents() {
             </div>
           </div>
 
+
           {/* This part of the image is not covered in the data above, so it is hardcoded */}
-          <div
-            className={`p-4 rounded-lg flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-4 border-l-4 bg-purple-50 border-gray-200 transition-shadow hover:shadow-lg`}
-          >
-            <div className="flex-shrink-0">
-              <img
-                src="https://images.unsplash.com/photo-1547425260-76bc4907989e?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="David Brown"
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-white shadow-md"
-              />
-            </div>
-            <div className="flex-grow">
-              <h3 className="text-lg font-semibold text-gray-900 leading-tight md:text-xl">
-                Trends AI and Machine Learning
-              </h3>
-              <p className="text-sm text-gray-600 mt-1 md:text-base">
-                By David Brown
-              </p>
-              <p className="text-gray-500 mt-2 text-sm hidden sm:block">
-                AI and Machine Learning are revolutionizing industries by
-                enabling advanced data analysis, personalized experiences, and
-                intelligent automation, paving the way for smarter and more
-                efficient solutions across various sectors.
-              </p>
-            </div>
-            <div className="flex-shrink-0 text-right md:w-32">
-              <span className="font-medium text-gray-800">
-                11:15 AM - 12:30 PM
-              </span>
-            </div>
-          </div>
+          
         </div>
 
         {/* Footer Button */}
-        <div className="p-4 flex justify-center border-t border-gray-200">
-          <button className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+        <div className="p-7 flex justify-center border-t border-gray-200">
+          <button className="bg-[#7A38FC] text-white font-semibold py-3 px-8 rounded-lg shadow-lg cursor-pointer hover:bg-[#6725e9] transition-colors">
             See All Schedule
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
