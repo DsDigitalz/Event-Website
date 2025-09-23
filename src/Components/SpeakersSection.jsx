@@ -8,7 +8,7 @@ function SpeakersSection() {
         <img
           src="herovector1.png"
           alt=""
-          className="hidden lg:block absolute bottom-4 left-20"
+          className="hidden lg:block absolute bottom-10 left-20"
         />
         <div className="">
           <img src="speakerimg.png" alt="Main speaker" />
