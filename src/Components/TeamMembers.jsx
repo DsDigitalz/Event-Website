@@ -50,7 +50,7 @@ function TeamMembers() {
   ];
 
   return (
-    <section className="bg-[#FFF5D9] md:pt-10 md:pb-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#FFF5D9] pb-10 md:pt-10 md:pb-15 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1440px] lg:px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {members.map((member, index) => (
           <div

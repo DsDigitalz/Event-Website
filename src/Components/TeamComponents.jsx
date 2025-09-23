@@ -45,7 +45,7 @@ function TeamComponents() {
   ];
 
   return (
-    <section className="bg-white py-5 md:pt-10 md:pb-20 l max-w-[1440px] px-4 lg:px-10  mx-auto flex justify-center items-center">
+    <section className="bg-white pt-5 pb-10  md:pt-10 md:pb-20 l max-w-[1440px] px-4 lg:px-10  mx-auto flex justify-center items-center">
       <div className="bg-white rounded-lg shadow-xl    w-full border border-gray-200">
         {/* Header Section */}
         <div className="bg-gray-800 text-white p-4 flex justify-between items-center rounded-t-lg">

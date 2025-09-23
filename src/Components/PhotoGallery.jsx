@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const GalleryImages = [
   "photo1.png",
@@ -15,15 +15,12 @@ const GalleryImages = [
   "photo12.png",
 ];
 
-const PhotoGallery = () => {
+function PhotoGallery() {
   return (
-    <section className="flex flex-col items-center lg:py-10 px-4 max-w-[1440px] mx-auto lg:px-10 bg-white">
+    <section className="flex flex-col items-center pb-10 lg:pt-10 lg:pb-15 px-4 max-w-[1440px] mx-auto lg:px-10 bg-white">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 w-full  ">
         {GalleryImages.map((src, index) => (
-          <div
-            key={index}
-            className="rounded-lg"
-          >
+          <div key={index} className="rounded-lg">
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
@@ -37,6 +34,6 @@ const PhotoGallery = () => {
       </button>
     </section>
   );
-};
+}
 
 export default PhotoGallery;

@@ -14,6 +14,7 @@ import MoreInfo from "./Components/MoreInfo";
 import EventCardInfo from "./Components/EventCardInfo";
 import GalleryText from "./Components/galleryText";
 import PhotoGallery from "./Components/PhotoGallery";
+import CallToAction from "./Components/CallToAction";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
       <EventCardInfo />
       <GalleryText />
       <PhotoGallery />
+      <CallToAction />
     </div>
   );
 }
