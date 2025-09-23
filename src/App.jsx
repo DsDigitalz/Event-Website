@@ -10,6 +10,7 @@ import SpeakersHeading from "./Components/SpeakersHeading";
 import TeamMembers from "./Components/TeamMembers";
 import ScheduleComponent from "./Components/ScheduleComponent";
 import TeamComponents from "./Components/TeamComponents";
+import MoreInfo from "./Components/MoreInfo";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       <TeamMembers />
       <ScheduleComponent />
       <TeamComponents />
+      <MoreInfo />
     </div>
   );
 }
