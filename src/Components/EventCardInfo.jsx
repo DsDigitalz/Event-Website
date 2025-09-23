@@ -70,7 +70,7 @@ function EventCardInfo() {
             <img
               src={event.image}
               alt={event.title}
-              className="w-full h-120 object-cover" // Corrected from 'h-120' to 'h-64'
+              className="w-full h-64 object-cover" // Corrected from 'h-120' to 'h-64'
             />
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
