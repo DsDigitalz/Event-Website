@@ -87,10 +87,10 @@ export default function Hero() {
             className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start"
             variants={buttonVariants}
           >
-            <motion.button className="rounded-lg border-2 border-purple-600 hover:bg-purple-600 active:bg-purple-600 text-purple-600 px-8 py-3 font-semibold transition-colors duration-300 hover:text-white active:text-white">
+            <motion.button className="rounded-lg border-2 border-purple-600 hover:bg-purple-600 active:bg-purple-600 text-purple-600 px-8 py-3 font-semibold transition-colors duration-300 cursor-pointer hover:text-white active:text-white">
               Buy Tickets
             </motion.button>
-            <motion.button className="rounded-lg border-2 border-purple-600 px-8 py-3 font-semibold text-purple-600 transition-colors duration-300 hover:bg-purple-600 active:bg-purple-600 hover:text-white active:text-white">
+            <motion.button className="rounded-lg border-2 border-purple-600 px-8 py-3 font-semibold text-purple-600 transition-colors duration-300 cursor-pointer hover:bg-purple-600 active:bg-purple-600 hover:text-white active:text-white">
               See Schedule
             </motion.button>
           </motion.div>
