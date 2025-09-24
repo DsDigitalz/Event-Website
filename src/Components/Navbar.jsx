@@ -17,44 +17,70 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    // This effect handles the navbar's appearance on scroll
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
       // Show the navbar if the user is scrolling up
-      if (window.scrollY > 10 && window.scrollY < window.prevScrollY) {
+      if (window.scrollY < lastScrollY || window.scrollY < 10) {
         setIsNavbarHidden(false);
-      } else {
-        setIsScrolled(window.scrollY > 10);
       }
-      window.prevScrollY = window.scrollY;
+
+      setIsScrolled(window.scrollY > 10);
+      lastScrollY = window.scrollY;
     };
 
-    const handleIntersection = (entries) => {
+    const handleFooterIntersection = (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && isTransitioning.current) {
-          // Hide the navbar when the target section is visible
+        // If the footer is entering the viewport, hide the navbar
+        if (entry.isIntersecting) {
           setIsNavbarHidden(true);
-          isTransitioning.current = false;
+        } else {
+          // Show the navbar when the footer is no longer in view
+          setIsNavbarHidden(false);
         }
       });
     };
 
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // viewport
-      threshold: 0.2, // trigger when 20% of the target is visible
-    });
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && isTransitioning.current) {
+            setIsNavbarHidden(true);
+            isTransitioning.current = false;
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.2,
+      }
+    );
 
     navLinks.forEach((link) => {
       const element = document.getElementById(link.id);
       if (element) {
-        observer.observe(element);
+        sectionObserver.observe(element);
       }
     });
+
+    // Observer for the footer (to hide navbar when it's in view)
+    const footerObserver = new IntersectionObserver(handleFooterIntersection, {
+      root: null,
+      threshold: 0.1, // Trigger when 10% of the footer is visible
+      rootMargin: "0px 0px -100px 0px", // Adjusts the viewport a bit
+    });
+
+    const footerElement = document.getElementById("contact");
+    if (footerElement) {
+      footerObserver.observe(footerElement);
+    }
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      observer.disconnect();
+      sectionObserver.disconnect();
+      footerObserver.disconnect();
     };
   }, []);
 
@@ -62,23 +88,18 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Function to handle smooth scrolling to a section by its ID and hide the navbar
   const handleSmoothScroll = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
       isTransitioning.current = true;
-
       element.scrollIntoView({ behavior: "smooth" });
-
-      // Close the mobile menu after clicking a link
       if (isMenuOpen) {
         toggleMenu();
       }
     }
   };
 
-  // Variants for the initial navbar entrance
   const navbarVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -93,7 +114,6 @@ export default function Navbar() {
     },
   };
 
-  // Variants for each nav link item
   const linkVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: {
@@ -106,7 +126,6 @@ export default function Navbar() {
     },
   };
 
-  // Variants for the desktop button
   const buttonVariants = {
     hidden: { opacity: 0, x: 20 },
     visible: {
@@ -119,7 +138,6 @@ export default function Navbar() {
     },
   };
 
-  // Variants for the mobile menu
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
