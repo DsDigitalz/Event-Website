@@ -43,7 +43,7 @@ const imageVariants = {
 
 function PhotoText() {
   return (
-    <section className="relative py-10 bg-white overflow-hidden">
+    <section className="relative py-10 bg-white overflow-hidden" id="gallery">
       <motion.img
         src="herovector2.png"
         alt=""

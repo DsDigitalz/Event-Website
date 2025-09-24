@@ -1,28 +1,81 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const isTransitioning = useRef(false);
+
+  // Define an array of link objects with text and their corresponding IDs
+  const navLinks = [
+    { text: "Home", id: "home" },
+    { text: "About", id: "about" },
+    { text: "Speakers", id: "speakers" },
+    { text: "Gallery", id: "gallery" },
+    { text: "Contact", id: "contact" },
+  ];
 
   useEffect(() => {
+    // This effect handles the navbar's appearance on scroll
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
+      // Show the navbar if the user is scrolling up
+      if (window.scrollY > 10 && window.scrollY < window.prevScrollY) {
+        setIsNavbarHidden(false);
       } else {
-        setIsScrolled(false);
+        setIsScrolled(window.scrollY > 10);
       }
+      window.prevScrollY = window.scrollY;
     };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && isTransitioning.current) {
+          // Hide the navbar when the target section is visible
+          setIsNavbarHidden(true);
+          isTransitioning.current = false;
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // viewport
+      threshold: 0.2, // trigger when 20% of the target is visible
+    });
+
+    navLinks.forEach((link) => {
+      const element = document.getElementById(link.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
   }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Function to handle smooth scrolling to a section by its ID and hide the navbar
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      isTransitioning.current = true;
+
+      element.scrollIntoView({ behavior: "smooth" });
+
+      // Close the mobile menu after clicking a link
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    }
   };
 
   // Variants for the initial navbar entrance
@@ -74,40 +127,38 @@ export default function Navbar() {
   };
 
   return (
-    <nav
+    <motion.nav
       className={`fixed top-0 w-full p-4 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-[#0f0b0cb1] backdrop-blur-md bg-opacity-80"
           : "bg-[#0F0B0C] bg-opacity-100"
+      } ${
+        isNavbarHidden
+          ? "transform -translate-y-full"
+          : "transform translate-y-0"
       }`}
+      variants={navbarVariants}
+      initial="hidden"
+      animate="visible"
     >
-      <motion.div
-        className="max-w-[1440px] container mx-auto flex items-center justify-between lg:px-10"
-        variants={navbarVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <motion.div className="max-w-[1440px] container mx-auto flex items-center justify-between lg:px-10">
         <motion.div variants={linkVariants}>
           <h1 className="text-xl md:text-3xl font-bold text-white">
             Monks Event
           </h1>
         </motion.div>
-        <motion.ul
-          className="hidden space-x-8 lg:flex"
-          variants={navbarVariants}
-        >
-          {["Home", "About", "Speakers", "Gallery", "Contact"].map(
-            (item, index) => (
-              <motion.li key={index} variants={linkVariants}>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                >
-                  {item}
-                </a>
-              </motion.li>
-            )
-          )}
+        <motion.ul className="hidden space-x-8 lg:flex">
+          {navLinks.map((link) => (
+            <motion.li key={link.id} variants={linkVariants}>
+              <a
+                href={`#${link.id}`}
+                onClick={(e) => handleSmoothScroll(e, link.id)}
+                className="text-gray-300 hover:text-white transition-colors duration-300"
+              >
+                {link.text}
+              </a>
+            </motion.li>
+          ))}
         </motion.ul>
         <motion.div className="hidden lg:block" variants={buttonVariants}>
           <button className="rounded-lg border-2 border-purple-600 px-6 py-2 text-gray-100 transition-colors duration-300 hover:bg-purple-600 cursor-pointer hover:text-white">
@@ -147,19 +198,17 @@ export default function Navbar() {
             exit="exit"
           >
             <ul className="flex flex-col items-center py-4 space-y-4">
-              {["Home", "About", "Speakers", "Gallery", "Contact"].map(
-                (item, index) => (
-                  <li key={index}>
-                    <a
-                      href="#"
-                      className="text-gray-300 hover:text-white transition-colors duration-300"
-                      onClick={toggleMenu}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => handleSmoothScroll(e, link.id)}
+                    className="text-gray-300 hover:text-white transition-colors duration-300"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
               <li>
                 <button className="rounded-lg border-2 border-purple-600 px-6 py-2 text-gray-100 transition-colors duration-300 hover:bg-purple-600 cursor-pointer hover:text-white">
                   Get Started
@@ -169,6 +218,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }

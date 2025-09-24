@@ -72,7 +72,7 @@ const copyrightVariants = {
 
 function Footer() {
   return (
-    <footer className="relative bg-gradient-to-l from-[#0F0B0C] to-[#1d0600] text-gray-300 py-10 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <footer className="relative bg-gradient-to-l from-[#0F0B0C] to-[#1d0600] text-gray-300 py-10 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" id="contact">
       <div className="max-w-[1440px] lg:px-10 mx-auto">
         {/* Newsletter Section */}
         <motion.div

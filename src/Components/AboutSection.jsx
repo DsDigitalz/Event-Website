@@ -44,7 +44,7 @@ const imageVariants = {
 
 function AboutSection() {
   return (
-    <section className="relative bg-white px-4 py-10 lg:py-20 overflow-hidden">
+    <section className=" relative bg-white px-4 py-10 lg:py-20 overflow-hidden" id="about">
       {" "}
       {/* Added overflow-hidden to prevent scrollbars during animation */}
       <motion.img

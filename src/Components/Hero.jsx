@@ -55,7 +55,7 @@ const imageVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0F0B0C] to-[#1d0600] pt-30 pb-20 md:pt-50 md:pb-10 text-white">
+    <section className="#home relative overflow-hidden bg-gradient-to-b from-[#0F0B0C] to-[#1d0600] pt-30 pb-20 md:pt-50 md:pb-10 text-white" id="home">
       <div className="max-w-[1440px] container mx-auto flex flex-col items-center justify-between gap-12 px-4 md:flex-row lg:px-10">
         {/* Left Content Section */}
         <motion.div

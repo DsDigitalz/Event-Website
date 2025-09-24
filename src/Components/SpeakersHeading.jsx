@@ -43,7 +43,7 @@ const buttonVariants = {
 
 function SpeakersHeading() {
   return (
-    <section className="bg-[#FFF5D9] py-10 md:py-15 overflow-hidden">
+    <section className="bg-[#FFF5D9] py-10 md:py-15 overflow-hidden" id="speakers">
       {" "}
       {/* Added overflow-hidden */}
       <div className="max-w-[1440px] mx-auto lg:px-10 px-4 flex flex-col items-center md:flex-row md:justify-between">
