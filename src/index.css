@@ -4,16 +4,32 @@
   font-family: Bricolage Grotesque;
 }
 
-/* Carousel.css */
-.carousel-animate {
-  animation: carousel-slide 30s linear infinite;
+.carousel-container {
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-@keyframes carousel-slide {
-  from {
-    transform: translateX(0);
+.carousel-slide {
+  display: flex;
+  animation: scroll 10s linear infinite; /* Default animation for mobile and small screens */
+}
+
+.carousel-slide:hover {
+  animation-play-state: paused;
+}
+
+/* Media query for desktop views (e.g., screens larger than 1024px) */
+@media (min-width: 1024px) {
+  .carousel-slide {
+    animation: scroll 20s linear infinite; /* Overrides to 20s for desktop */
   }
-  to {
-    transform: translateX(-100%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Animate half of the container's width */
   }
 }
